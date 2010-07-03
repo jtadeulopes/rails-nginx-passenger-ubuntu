@@ -102,7 +102,18 @@ Verify the ruby installation
 Installing git
 ----------------
 
-    sudo apt-get install git-core
+Check for newer version at http://git-scm.com/download
+
+Download and install git
+
+    sudo apt-get build-dep git-core
+
+    wget http://kernel.org/pub/software/scm/git/git-1.7.1.1.tar.gz
+    tar xvfz git-1.7.1.1.tar.gz
+    cd git-1.7.1.1.tar.gz
+    ./configure
+    make
+    make install
 
 Nginx
 -------

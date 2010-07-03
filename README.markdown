@@ -211,6 +211,15 @@ Install RMagick
  
     sudo /opt/ruby/bin/ruby /opt/ruby/bin/gem install rmagick
 
+Installing Vim 7.2 From Source
+----------------------------------
+
+    svn co https://vim.svn.sourceforge.net/svnroot/vim/branches/vim7.2
+    cd vim7.2/
+    ./configure --with-features=huge --enable-gui=gnome2 --enable-cscope --enable-pythoninterp
+    make
+    sudo make install
+
 Test a rails applicaton with nginx
 ----------------------------------
 

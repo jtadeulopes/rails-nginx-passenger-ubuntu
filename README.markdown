@@ -220,6 +220,13 @@ Installing Vim 7.2 From Source
     make
     sudo make install
 
+Add plugins and snippets
+
+    git clone git://github.com/cassiomarques/cmarques-vimfiles.git ~/.vim    
+    cp .vim/vimrc ~/.vimrc
+
+It is we would recommend changing the file .vimrc and change the colorscheme ir_black to desert.
+
 Test a rails applicaton with nginx
 ----------------------------------
 

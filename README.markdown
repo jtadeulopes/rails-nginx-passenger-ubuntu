@@ -190,12 +190,13 @@ Use wget to grab the source from ImageMagick.org.
 Once the source is downloaded, uncompress it:
 
 
+    wget ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick.tar.gz
     tar xvfz ImageMagick.tar.gz
 
 
 Now configure and make:
 
-    cd ImageMagick-6.5.0-0
+    cd ImageMagick-6.6.2-10
     ./configure
     make
     sudo make install

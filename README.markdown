@@ -100,19 +100,19 @@ Verify the ruby installation
 
 Verify rake using sudo
 
-  sudo rake --version
+    sudo rake --version
 
 If you receive this message
 
-  sudo: rake: command not found  
+    sudo: rake: command not found  
 
 Execute
 
-  cd /usr/local/bin
-  sudo ln -s /opt/ruby/bin/rake
-  sudo ln -s /opt/ruby/bin/ruby
-  sudo ln -s /opt/ruby/bin/gem
-  sudo ln -s /opt/ruby/bin/irb
+    cd /usr/local/bin
+    sudo ln -s /opt/ruby/bin/rake
+    sudo ln -s /opt/ruby/bin/ruby
+    sudo ln -s /opt/ruby/bin/gem
+    sudo ln -s /opt/ruby/bin/irb
 
 
 Installing git

@@ -98,6 +98,22 @@ Verify the ruby installation
     ruby -v
     ruby 1.8.7 (2009-06-12 patchlevel 174) [x86_64-linux], MBARI 0x6770, Ruby Enterprise Edition 20090928
 
+Verify rake using sudo
+
+  sudo rake --version
+
+If you receive this message
+
+  sudo: rake: command not found  
+
+Execute
+
+  cd /usr/local/bin
+  sudo ln -s /opt/ruby/bin/rake
+  sudo ln -s /opt/ruby/bin/ruby
+  sudo ln -s /opt/ruby/bin/gem
+  sudo ln -s /opt/ruby/bin/irb
+
 
 Installing git
 ----------------

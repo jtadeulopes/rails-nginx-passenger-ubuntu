@@ -131,6 +131,8 @@ Download and install git
     make
     sudo make install
 
+    sudo apt-get install exuberant-ctags
+
 Nginx
 -------
 

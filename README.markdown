@@ -129,7 +129,7 @@ Download and install git
     cd git-1.7.1.1.tar.gz
     ./configure
     make
-    make install
+    sudo make install
 
 Nginx
 -------

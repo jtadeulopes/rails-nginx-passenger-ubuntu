@@ -245,6 +245,92 @@ Add plugins and snippets
 
 It is we would recommend changing the file .vimrc and change the colorscheme ir_black to desert.
 
+Monit
+-----
+
+    sudo apt-get install monit
+
+Make sure all of the monit files are in place — /etc/default/monit and /etc/init.d/monit — and then we can remove the package:
+
+    sudo apt-get remove monit
+
+Install dependencies
+
+    sudo apt-get install bison flex
+
+Once we’ve got the dependencies, we can download the source:
+
+    wget http://mmonit.com/monit/dist/monit-5.2.1.tar.gz
+    tar xzvf monit-5.2.1.tar.gz
+    cd monit-5.2.1
+    ./configure
+    make
+    sudo make install
+
+Now Monit 5 should be installed. We’ll need to update the init script and the configuration file to use the new Monit installation path:
+
+    sudo vim /etc/init.d/monit
+
+Look for the PATH and DAEMON variables — change them so they look like this:
+
+    PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+    DAEMON=/usr/local/bin/monit    
+
+Configure monit and then edit /etc/default/monit and set the "startup" variable to 1 in order to allow monit to start
+
+    startup=1
+
+Edit monit configuration file in /etc/monit/monitrc. Inside it, add something like this:
+
+    set daemon  120
+    set logfile syslog facility log_daemon
+    set mailserver localhost
+
+    set eventqueue
+        basedir /var/monit
+        slots 1000
+
+    set mail-format { from: monit@mydomain.com }
+
+    set alert admin@domain.com
+
+    set httpd port 2812 and
+       use address localhost
+       allow admin:monit
+
+       check system localhost
+          if loadavg (1min) > 3 then alert
+          if loadavg (5min) > 2 then alert
+          if memory usage > 60% then alert
+          if cpu usage (user) > 70% then alert
+          if cpu usage (system) > 30% then alert
+          if cpu usage (wait) > 20% then alert
+
+       ## nginx ##
+       check process nginx with pidfile /opt/nginx/logs/nginx.pid
+          start program = "/etc/init.d/nginx start"
+          stop program  = "/etc/init.d/nginx stop"
+          group server
+
+       ## mysql ##
+       check process mysql with pidfile /var/run/mysqld/mysqld.pid
+          start program = "/etc/init.d/mysql start"
+          stop program = "/etc/init.d/mysql stop"
+          group database
+
+       ## redis ##
+       check process redis-server with pidfile /var/run/redis.pid
+          start program = "/usr/bin/redis-server /etc/redis.conf"
+          stop program = "/usr/bin/killall -9 redis-server"
+          group redis
+
+Start monit:
+
+    sudo /etc/init.d/monit start
+    => Starting daemon monitor: monit.
+
+If monit is working, you will watch it automatically restart. Don't forget to check out the web interface on http://youdomain.com:2812
+
 Test a rails applicaton with nginx
 ----------------------------------
 

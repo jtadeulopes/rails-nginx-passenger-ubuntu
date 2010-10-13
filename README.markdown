@@ -295,7 +295,6 @@ Edit monit configuration file in /etc/monit/monitrc. Inside it, add something li
     set alert admin@domain.com
 
     set httpd port 2812 and
-       use address localhost
        allow admin:monit
 
        check system localhost
@@ -330,6 +329,8 @@ Start monit:
     => Starting daemon monitor: monit.
 
 If monit is working, you will watch it automatically restart. Don't forget to check out the web interface on http://youdomain.com:2812
+
+For more information about configure Monit, see http://rfw.posterous.com/monit-101-an-developers-guide-to-system-monit
 
 Test a rails applicaton with nginx
 ----------------------------------

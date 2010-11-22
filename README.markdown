@@ -72,7 +72,7 @@ Add the following lines to ~/.gemrc, this will speed up gem installation and pre
 Ruby Enterprise Edition
 ------------------------
 
-Check for newer version at http://www.rubyenterpriseedition.com/download.html
+Check for newer version at [http://www.rubyenterpriseedition.com/download.html](http://www.rubyenterpriseedition.com/download.html)
 
 Install package required by ruby enterprise, C compiler, Zlib development headers, OpenSSL development headers, GNU Readline development headers
 
@@ -118,7 +118,7 @@ Execute
 Installing git
 ----------------
 
-Check for newer version at http://git-scm.com/download
+Check for newer version at [http://git-scm.com/download](http://git-scm.com/download)
 
 Download and install git
 
@@ -166,7 +166,7 @@ On, extra arguments to pass to configure script add
 Nginx init script
 -------------------
 
-More information on http://wiki.nginx.org/Nginx-init-ubuntu
+More information on [http://wiki.nginx.org/Nginx-init-ubuntu](http://wiki.nginx.org/Nginx-init-ubuntu)
 
     cd
     git clone git://github.com/jnstq/rails-nginx-passenger-ubuntu.git
@@ -330,7 +330,7 @@ Start monit:
 
 If monit is working, you will watch it automatically restart. Don't forget to check out the web interface on http://youdomain.com:2812
 
-For more information about configure Monit, see http://rfw.posterous.com/monit-101-an-developers-guide-to-system-monit
+For more information about configure Monit, see [http://rfw.posterous.com/monit-101-an-developers-guide-to-system-monit](http://rfw.posterous.com/monit-101-an-developers-guide-to-system-monit)
 
 Test a rails applicaton with nginx
 ----------------------------------

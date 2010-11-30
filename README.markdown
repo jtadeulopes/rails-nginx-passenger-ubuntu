@@ -284,7 +284,9 @@ Edit monit configuration file in /etc/monit/monitrc. Inside it, add something li
 
     set daemon  120
     set logfile syslog facility log_daemon
-    set mailserver localhost
+
+    set mailserver smtp.gmail.com port 587 username "user@domain.com" password "userpassword" using tlsv1,
+      with timeout 15 seconds
 
     set eventqueue
         basedir /var/monit

@@ -78,7 +78,7 @@ Install package required by ruby enterprise, C compiler, Zlib development header
 
     sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev
 
-Download and install Ruby Enterprise Edition
+Download and install Ruby
 
     wget ftp://ftp.ruby-lang.org//pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
     tar xvfz ruby-1.9.2-p136.tar.gz 
@@ -87,6 +87,10 @@ Download and install Ruby Enterprise Edition
     ./configure
     make
     sudo make install
+
+For installing in /opt
+
+    ./configure --prefix=/opt/ruby
     
 Verify the ruby installation
 

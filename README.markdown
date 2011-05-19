@@ -113,9 +113,9 @@ Download and install git
 
     sudo apt-get build-dep git-core
 
-    wget http://kernel.org/pub/software/scm/git/git-1.7.1.1.tar.gz
-    tar xvfz git-1.7.1.1.tar.gz
-    cd git-1.7.1.1.tar.gz
+    wget http://kernel.org/pub/software/scm/git/git-1.7.5.1.tar.bz2
+    tar -jxvf git-1.7.5.1.tar.bz2
+    cd git-1.7.5.1
     ./configure
     make
     sudo make install

@@ -69,50 +69,39 @@ Add the following lines to ~/.gemrc, this will speed up gem installation and pre
     gem: --no-ri --no-rdoc
 
 
-Ruby Enterprise Edition
-------------------------
+Ruby 1.9.2
+----------
 
-Check for newer version at [http://www.rubyenterpriseedition.com/download.html](http://www.rubyenterpriseedition.com/download.html)
+Check for newer version at [http://www.ruby-lang.org/en/downloads/](http://www.ruby-lang.org/en/downloads/)
 
 Install package required by ruby enterprise, C compiler, Zlib development headers, OpenSSL development headers, GNU Readline development headers
 
     sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev
 
-Download and install Ruby Enterprise Edition
+Download and install Ruby
 
-    wget http://rubyforge.org/frs/download.php/66162/ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz
-    tar xvfz ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz 
-    rm ruby-enterprise-X.X.X-ZZZZ.ZZ.tar.gz 
-    cd ruby-enterprise-X.X.X-ZZZZ.ZZ/
-    sudo ./installer
-    
-    
-Change target folder to /opt/ruby for easier upgrade later on
+    wget ftp://ftp.ruby-lang.org//pub/ruby/1.9/ruby-1.9.2-p136.tar.gz
+    tar xvfz ruby-1.9.2-p136.tar.gz 
+    rm ruby-1.9.2-p136.tar.gz 
+    cd ruby-1.9.2-p136.tar.gz/
+    ./configure
+    make
+    sudo make install
 
-Add Ruby Enterprise bin to PATH
+For installing in /opt
 
-    echo "export PATH=/opt/ruby/bin:$PATH" >> ~/.profile && . ~/.profile
+    ./configure --prefix=/opt/ruby
     
 Verify the ruby installation
 
     ruby -v
-    ruby 1.8.7 (2009-06-12 patchlevel 174) [x86_64-linux], MBARI 0x6770, Ruby Enterprise Edition 20090928
+    ruby 1.9.2p136 (2010-12-25 revision 30365) [i686-linux]
 
-Verify rake using sudo
 
-    sudo rake --version
+Passenger 
+---------
 
-If you receive this message
-
-    sudo: rake: command not found  
-
-Execute
-
-    cd /usr/local/bin
-    sudo ln -s /opt/ruby/bin/rake
-    sudo ln -s /opt/ruby/bin/ruby
-    sudo ln -s /opt/ruby/bin/gem
-    sudo ln -s /opt/ruby/bin/irb
+    sudo gem install passenger --no-rdoc --no-ri
 
 
 Installing git
@@ -124,19 +113,17 @@ Download and install git
 
     sudo apt-get build-dep git-core
 
-    wget http://kernel.org/pub/software/scm/git/git-1.7.1.1.tar.gz
-    tar xvfz git-1.7.1.1.tar.gz
-    cd git-1.7.1.1.tar.gz
+    wget http://kernel.org/pub/software/scm/git/git-1.7.5.1.tar.bz2
+    tar -jxvf git-1.7.5.1.tar.bz2
+    cd git-1.7.5.1
     ./configure
     make
     sudo make install
 
-    sudo apt-get install exuberant-ctags
-
 Nginx
 -------
 
-    sudo /opt/ruby/bin/passenger-install-nginx-module
+    sudo passenger-install-nginx-module
 
 Select option 1. Yes: download, compile and install Nginx for me. (recommended)
 
@@ -242,6 +229,8 @@ Add plugins and snippets
 
     git clone git://github.com/cassiomarques/cmarques-vimfiles.git ~/.vim    
     cp .vim/vimrc ~/.vimrc
+
+    sudo apt-get install exuberant-ctags
 
 It is we would recommend changing the file .vimrc and change the colorscheme ir_black to desert.
 

@@ -62,11 +62,11 @@ Gemrc
 
 Add the following lines to ~/.gemrc, this will speed up gem installation and prevent rdoc and ri from being generated, this is not nessesary in the production environment.
 
-    ---
-    :sources:
-    - http://gems.rubyforge.org
-    - http://gems.github.com
-    gem: --no-ri --no-rdoc
+    --- 
+    :sources: 
+    - http://rubygems.org/
+    - http://gemcutter.org
+    gem: --no-rdoc --no-ri
 
 
 Ruby 1.9.2
